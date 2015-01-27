@@ -1,0 +1,8 @@
+<h1>What mood are you in?</h1>
+
+<%= form_tag do %>
+  <%= select_tag "mood_selector", options_for_select(["Good", "Bad"]) %>
+  <%= submit_tag %>
+<% end %>
+
+<p><%= @mood %></p>
