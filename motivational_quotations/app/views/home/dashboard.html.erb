@@ -1,7 +1,7 @@
 <h1>Inspiration Machine</h1>
 
 <%= form_tag do %>
-  <%= select_tag "person", options_for_select(["Albert Einstein", "Victor Wooten", "Benjamin Franklin"], @person) %>
+  <%= select_tag "person", options_for_select(@options, @person) %>
   <%= submit_tag "Wisdom"%>
 <% end %>
 
