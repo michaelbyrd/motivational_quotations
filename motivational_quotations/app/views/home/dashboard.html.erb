@@ -1,8 +1,10 @@
-<h1>Who would you like a quote from?</h1>
+<h1>Inspiration Machine</h1>
 
 <%= form_tag do %>
   <%= select_tag "person", options_for_select(["Albert Einstein", "Victor Wooten", "Benjamin Franklin"], @person) %>
-  <%= submit_tag %>
+  <%= submit_tag "Wisdom"%>
 <% end %>
 
-<p>“<%= @quote %>” - <%= @person %></p>
+<p>“<%= @quote %>”</p>
+<p>- <%= @person %></p>
+<%= image_tag(@picture) %>
