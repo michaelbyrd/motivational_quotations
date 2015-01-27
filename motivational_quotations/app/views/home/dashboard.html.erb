@@ -1,8 +1,8 @@
-<h1>What mood are you in?</h1>
+<h1>Who would you like a quote from?</h1>
 
 <%= form_tag do %>
-  <%= select_tag "mood_selector", options_for_select(["Good", "Bad"]) %>
+  <%= select_tag "person", options_for_select(["Albert Einstein", "Victor Wooten", "Benjamin Franklin"], @person) %>
   <%= submit_tag %>
 <% end %>
 
-<p><%= @mood %></p>
+<p>“<%= @quote %>” - <%= @person %></p>

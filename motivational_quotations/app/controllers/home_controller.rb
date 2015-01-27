@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def dashboard
-    @mood = params[:mood_selector]
+    @person = params[:person] || "Albert Einstein"
+    @quote = Quote.get_quote(@person)
   end
 end
