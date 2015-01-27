@@ -3,14 +3,25 @@ class HomeController < ApplicationController
     @person = params[:person] || "Albert Einstein"
     @options = Quote.get_options
     @quote = Quote.get_quote(@person)
-    # @picture = Quote.get_picture_url(@person)
-    @picture = get_pic_url
+    @picture = Quote.get_picture_url(@person)
+    # @picture = get_pic_url
+    # @picture = make_meme_request
   end
 
-  def get_pic_url
-    url = "http://version1.api.memegenerator.net/Generators_Search?q=jimi+hendrix&pageIndex=0&pageSize=12"
+  def make_meme_request
+    username = 'nope'
+    password = 'nope'
+    text0 = 'ask me how'
+    text1 = 'to make api request'
+    meme = "http://version1.api.memegenerator.net/Instance_Create?username=#{username}&password=#{password}&languageCode=en&generatorID=45&imageID=20&text0=#{text0}&text1=#{text1}"
+    get_picture_url(meme)
+
+  end
+
+  def get_picture_url(url)
+    url = URI.encode(url)
     page = HTTParty.get(url).response.body
     r = JSON.parse page
-    return r["result"][0]["imageUrl"]
+    return r["result"]["instanceImageUrl"]
   end
 end
