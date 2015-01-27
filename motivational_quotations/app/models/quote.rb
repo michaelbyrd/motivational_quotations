@@ -15,7 +15,8 @@ class Quote
                                                                       "Be at war with your vices, at peace with your neighbors, and let every new year find you a better man.",
                                                                       "Beware of little expenses. A small leak will sink a great ship."],
                                                                       "Jimi Hendrix" => ["Knowledge speaks, but wisdom listens.",
-                                                                                         "I used to live in a room full of mirrors; all I could see was me. I take my spirit and I crash my mirrors, now the whole world is here for me to see."]
+                                                                                         "I used to live in a room full of mirrors; all I could see was me. I take my spirit and I crash my mirrors, now the whole world is here for me to see.",
+                                                                                         "I've been imitated so well I've heard people copy my mistakes."]
   }
 
   PICTURES = {"Albert Einstein" => "http://content8.flixster.com/rtactor/42/23/42230_pro.jpg",
