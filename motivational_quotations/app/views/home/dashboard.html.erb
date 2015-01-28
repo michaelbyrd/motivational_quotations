@@ -5,6 +5,6 @@
   <%= submit_tag "Wisdom"%>
 <% end %>
 
-<p>“<%= @quote %>”</p>
+<p>“<%= @quote.quote %>”</p>
 <p>- <%= @person %></p>
-<%= image_tag(@picture) %>
+<%= image_tag(@quote.picture) %>

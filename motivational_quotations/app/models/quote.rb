@@ -24,8 +24,16 @@ class Quote
               "Benjamin Franklin" => "http://www.npg.si.edu/exhibit/legacy/slideshow/gallery/album1/large/lgben.jpg",
               "Jimi Hendrix" => "http://i.telegraph.co.uk/multimedia/archive/01711/C-Jimi-Ladyland-po_1711987i.jpg"
   }
+
+
+  attr_reader :quote, :picture
+  def initialize(quote, picture)
+    @quote = quote
+    @picture = picture
+  end
+
   def self.get_quote(string)
-    QUOTES[string].sample
+    Quote.new(QUOTES[string].sample, PICTURES[string])
   end
 
   def self.get_picture_url(string)
