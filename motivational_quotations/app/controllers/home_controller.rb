@@ -8,9 +8,9 @@ class HomeController < ApplicationController
     # @picture = make_meme_request
   end
 
-  def make_meme_request
-    username = 'nope'
-    password = 'nope'
+  private def make_meme_request
+    username = ENV["MEMEUSERNAME"]
+    password = ENV["MEMEPASSWORD"]
     text0 = 'ask me how'
     text1 = 'to make api request'
     meme = "http://version1.api.memegenerator.net/Instance_Create?username=#{username}&password=#{password}&languageCode=en&generatorID=45&imageID=20&text0=#{text0}&text1=#{text1}"
@@ -18,7 +18,7 @@ class HomeController < ApplicationController
 
   end
 
-  def get_picture_url(url)
+  private def get_picture_url(url)
     url = URI.encode(url)
     page = HTTParty.get(url).response.body
     r = JSON.parse page
